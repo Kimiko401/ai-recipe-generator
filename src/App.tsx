@@ -11,6 +11,13 @@ import {
 } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
+import { Amplify } from 'aws-amplify'; // 1. Add this import
+import outputs from '../amplify_outputs.json'; // 2. Import your config file
+
+// 3. Connect the frontend to the backend
+Amplify.configure(outputs);
+
+
 // Define a type for your portfolio items
 interface ScriptProject {
   title: string;
